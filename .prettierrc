@@ -1,0 +1,20 @@
+{
+  "printWidth": 80,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "semi": false,
+  "proseWrap": "never",
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-packagejson",
+    "prettier-plugin-organize-imports"
+  ],
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}
