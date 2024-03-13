@@ -1,0 +1,16 @@
+{
+  "name": "@niceai/api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@niceai/eslint-config/base"
+    ]
+  },
+  "prettier": "@niceai/prettier-config"
+}

@@ -2,22 +2,23 @@
 
 # dependencies
 node_modules
-/.pnp
+.pnp
 .pnp.js
 
 # testing
-/coverage
-
-# database
-/prisma/db.sqlite
-/prisma/db.sqlite-journal
+coverage
 
 # next.js
 .next/
 out/
+next-env.d.ts
+
+# nitro
+.nitro/
+.output/
 
 # production
-/build
+build
 
 # misc
 .DS_Store
@@ -39,10 +40,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-public/sw.js
-public/workbox-*.js
-web/public/sw.js
-web/public/workbox-*.js
-
-# Turbo
+# turbo
 .turbo

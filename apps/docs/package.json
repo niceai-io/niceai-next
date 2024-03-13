@@ -1,0 +1,15 @@
+{
+  "name": "@niceai/docs",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@niceai/eslint-config/base"
+    ]
+  },
+  "prettier": "@niceai/prettier-config"
+}
