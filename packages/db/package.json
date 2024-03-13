@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@planetscale/database": "^1.16.0",
-    "drizzle-orm": "^0.30.1",
     "crypto-js": "^4.2.0",
+    "drizzle-orm": "^0.30.1",
     "lodash-es": "^4.17.21",
     "postgres": "^3.4.3"
   },
@@ -27,12 +27,12 @@
     "@niceai/eslint-config": "workspace:^0.2.0",
     "@niceai/prettier-config": "workspace:^0.1.0",
     "@niceai/tsconfig": "workspace:^0.1.0",
+    "@types/crypto-js": "^4.2.2",
+    "@types/lodash-es": "^4.17.12",
     "dotenv-cli": "^7.4.1",
     "drizzle-kit": "^0.20.14",
-    "@types/lodash-es": "^4.17.6",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "@types/crypto-js":"^4.2.2",
     "typescript": "^5.4.2"
   },
   "eslintConfig": {
