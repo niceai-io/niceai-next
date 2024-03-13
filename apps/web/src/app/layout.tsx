@@ -6,38 +6,22 @@ import { cn } from "@niceai/ui";
 import { ThemeProvider, ThemeToggle } from "@niceai/ui/theme";
 import { Toaster } from "@niceai/ui/toast";
 
-import { env } from "~/env";
-import { TRPCReactProvider } from "~/trpc/react";
-
-import "~/app/globals.css";
-
-export const metadata: Metadata = {
-  metadataBase: new URL(
-    env.VERCEL_ENV === "production"
-      ? "https://turbo.t3.gg"
-      : "http://localhost:3000",
-  ),
-  title: "Create T3 Turbo",
-  description: "Simple monorepo with shared backend for web & mobile apps",
-  openGraph: {
-    title: "Create T3 Turbo",
-    description: "Simple monorepo with shared backend for web & mobile apps",
-    url: "https://create-t3-turbo.vercel.app",
-    siteName: "Create T3 Turbo",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@jullerino",
-    creator: "@jullerino",
-  },
-};
+import "../styles/globals.css";
 
 export const viewport: Viewport = {
+  initialScale: 1,
+  maximumScale: 1,
+  minimumScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { color: "#f8f8f8", media: "(prefers-color-scheme: light)" },
+    { color: "#000", media: "(prefers-color-scheme: dark)" },
   ],
+  userScalable: false,
+  viewportFit: "cover",
+  width: "device-width",
 };
+
+export { default as metadata } from "./metadata";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -50,7 +34,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TRPCReactProvider>{props.children}</TRPCReactProvider>
+          {/* <TRPCReactProvider> */}
+          {props.children}
+          {/* </TRPCReactProvider> */}
           <div className="absolute bottom-4 right-4">
             <ThemeToggle />
           </div>
