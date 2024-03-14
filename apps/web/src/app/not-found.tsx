@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
-import { Button, Space, Typography } from 'antd'
-import Link from 'next/link'
+import { Button, Space, Typography } from "antd";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex justify-center items-center flex-col flex-auto bg-not-found">
-      <div className="p-8 min-w-128 max-w-full">
+    <div className="bg-not-found flex min-h-screen flex-auto flex-col items-center justify-center">
+      <div className="min-w-128 max-w-full p-8">
         <Space
           direction="vertical"
           align="center"
-          className="rounded-lg bg-white px-8 py-12 w-full"
+          className="w-full rounded-lg bg-white px-8 py-12"
         >
           <Typography.Title level={3}>Page not found</Typography.Title>
           <Typography.Text type="secondary">
@@ -22,5 +22,5 @@ export default function NotFound() {
         </Space>
       </div>
     </div>
-  )
+  );
 }

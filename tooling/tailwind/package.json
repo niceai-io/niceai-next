@@ -2,17 +2,24 @@
   "name": "@niceai/tailwind-config",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "exports": {
     "./native": "./native.ts",
     "./web": "./web.ts"
   },
-  "license": "MIT",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "format": "prettier --write . --cache --ignore-path ../../.gitignore",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@niceai/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@niceai/eslint-config/base"
+    ],
+    "root": true
   },
   "dependencies": {
     "postcss": "^8.4.35",
@@ -26,12 +33,5 @@
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "typescript": "^5.4.2"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@niceai/eslint-config/base"
-    ]
-  },
-  "prettier": "@niceai/prettier-config"
+  }
 }

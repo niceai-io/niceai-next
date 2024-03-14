@@ -9,28 +9,28 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
-import { pgSqlTable } from "./_table";
 import { randomKey } from "../utils";
+import { pgSqlTable } from "./_table";
 
-export const users = pgSqlTable('user', {
-  id: varchar('id', { length: 255 }).notNull().primaryKey(),
-  name: varchar('name', { length: 255 }),
-  email: varchar('email', { length: 255 }).notNull(),
-  emailVerified: timestamp('emailVerified', {
-    mode: 'date',
+export const users = pgSqlTable("user", {
+  id: varchar("id", { length: 255 }).notNull().primaryKey(),
+  name: varchar("name", { length: 255 }),
+  email: varchar("email", { length: 255 }).notNull(),
+  emailVerified: timestamp("emailVerified", {
+    mode: "date",
   }).default(sql`CURRENT_TIMESTAMP(3)`),
-  password: varchar('password', { length: 255 }),
-  nickName: varchar('nick_name', { length: 255 }),
-  image: varchar('image', { length: 255 }),
-  createdAt: timestamp('createdAt').defaultNow(),
-  updatedAt: timestamp('updatedAt').defaultNow(),
-  bio: text('bio').default(''),
-  url: varchar('url', { length: 255 }).default(''),
-  publicKey: varchar('public_key', { length: 255 }).$defaultFn(() =>
+  password: varchar("password", { length: 255 }),
+  nickName: varchar("nick_name", { length: 255 }),
+  image: varchar("image", { length: 255 }),
+  createdAt: timestamp("createdAt").defaultNow(),
+  updatedAt: timestamp("updatedAt").defaultNow(),
+  bio: text("bio").default(""),
+  url: varchar("url", { length: 255 }).default(""),
+  publicKey: varchar("public_key", { length: 255 }).$defaultFn(() =>
     randomKey(12),
   ),
-  settings: json('settings').default({}),
-})
+  settings: json("settings").default({}),
+});
 
 export const usersRelations = relations(users, ({ many }) => ({
   accounts: many(accounts),

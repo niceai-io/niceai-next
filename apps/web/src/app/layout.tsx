@@ -1,6 +1,6 @@
-import type { Viewport } from "next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import type { Viewport } from "next";
 
 import { cn } from "@niceai/ui";
 import { ThemeProvider, ThemeToggle } from "@niceai/ui/theme";

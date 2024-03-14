@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import { captureException } from '@sentry/nextjs'
-import NextError from 'next/error'
-import { useEffect } from 'react'
+import { captureException } from "@sentry/nextjs";
+import NextError from "next/error";
+import { useEffect } from "react";
 
 export default function GlobalError({
   error,
 }: {
-  error: Error & { digest?: string }
+  error: Error & { digest?: string };
 }) {
   useEffect(() => {
-    captureException(error)
-  }, [error])
+    captureException(error);
+  }, [error]);
 
   return (
     <html>
@@ -19,5 +19,5 @@ export default function GlobalError({
         <NextError statusCode={undefined as unknown as number} />
       </body>
     </html>
-  )
+  );
 }

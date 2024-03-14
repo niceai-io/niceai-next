@@ -1,16 +1,19 @@
 {
   "name": "@niceai/api",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "devDependencies": {
-    "typescript": "^5.4.2"
+  "scripts": {
+    "format": "prettier --write . --cache --ignore-path ../../.gitignore"
   },
+  "prettier": "@niceai/prettier-config",
   "eslintConfig": {
-    "root": true,
     "extends": [
       "@niceai/eslint-config/base"
-    ]
+    ],
+    "root": true
   },
-  "prettier": "@niceai/prettier-config"
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  }
 }

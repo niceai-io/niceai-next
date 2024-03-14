@@ -1,12 +1,12 @@
-import { type MetadataRoute } from 'next'
+import { type MetadataRoute } from "next";
 
 const robots = (): MetadataRoute.Robots => {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
+      userAgent: "*",
+      allow: "/",
     },
-  }
-}
+  };
+};
 
-export default robots
+export default robots;

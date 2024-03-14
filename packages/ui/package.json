@@ -1,7 +1,8 @@
 {
   "name": "@niceai/ui",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
@@ -12,13 +13,19 @@
     "./theme": "./src/theme.tsx",
     "./toast": "./src/toast.tsx"
   },
-  "license": "MIT",
   "scripts": {
     "add": "pnpm dlx shadcn-ui add",
     "clean": "rm -rf .turbo node_modules",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "format": "prettier --write . --cache --ignore-path ../../.gitignore",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@niceai/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@niceai/eslint-config/base",
+      "@niceai/eslint-config/react"
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -38,7 +45,7 @@
     "@niceai/prettier-config": "workspace:^0.1.0",
     "@niceai/tailwind-config": "workspace:^0.1.0",
     "@niceai/tsconfig": "workspace:^0.1.0",
-    "@types/react": "^18.2.65",
+    "@types/react": "^18.2.66",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
@@ -50,15 +57,8 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-icons": "^5.0.1",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "zod": "^3.22.4"
-  },
-  "eslintConfig": {
-    "extends": [
-      "@niceai/eslint-config/base",
-      "@niceai/eslint-config/react"
-    ]
-  },
-  "prettier": "@niceai/prettier-config"
+  }
 }
