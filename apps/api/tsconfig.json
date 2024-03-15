@@ -1,8 +1,9 @@
 {
-  "extends": "@niceai/tsconfig/base.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "moduleResolution": "Node16"
   },
-  "include": ["."],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }

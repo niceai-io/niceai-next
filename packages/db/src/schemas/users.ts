@@ -8,7 +8,6 @@ import {
   timestamp,
   varchar,
 } from "drizzle-orm/pg-core";
-
 import { randomKey } from "../utils";
 import { pgSqlTable } from "./_table";
 

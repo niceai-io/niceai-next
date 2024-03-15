@@ -1,7 +1,6 @@
 {
   "name": "niceai-monorepo",
   "private": true,
-  "packageManager": "pnpm@8.15.4",
   "scripts": {
     "build": "turbo build",
     "clean": "git clean -xdf node_modules",
@@ -11,20 +10,25 @@
     "dev": "turbo dev --parallel",
     "format": "turbo format --continue -- --cache-location node_modules/.cache/.prettiercache",
     "format:fix": "turbo format --continue -- --write --cache --cache-location node_modules/.cache/.prettiercache",
+    "postinstall": "pnpm lint:ws",
     "lint": "turbo lint --continue -- --cache --cache-location node_modules/.cache/.eslintcache",
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
     "lint:ws": "pnpm dlx sherif@latest",
-    "postinstall": "pnpm lint:ws",
+    "pre-commit": "lint-staged",
+    "prepare": "husky",
     "typecheck": "turbo typecheck"
   },
+  "prettier": "@niceai/prettier-config",
   "devDependencies": {
     "@niceai/prettier-config": "workspace:^0.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "turbo": "^1.12.5",
     "typescript": "^5.4.2"
   },
+  "packageManager": "pnpm@8.15.4",
   "engines": {
-    "node": "^18.0.0 || >=20.0.0"
-  },
-  "prettier": "@niceai/prettier-config"
+    "node": "^18.19.0 || >=20.0.0"
+  }
 }
