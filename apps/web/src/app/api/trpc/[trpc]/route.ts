@@ -3,7 +3,7 @@ import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { auth } from "@niceai/auth";
 import { appRouter, createTRPCContext } from "@niceai/trpc";
 
-// export const runtime = "edge";
+export const runtime = "nodejs"; // 'nodejs' (default) | 'edge'
 
 /**
  * Configure basic CORS headers

@@ -11,8 +11,8 @@ export const spaces = pgSqlTable(
     createdAt: timestamp("created_at").default(sql`CURRENT_TIMESTAMP`),
     updatedAt: timestamp("updatedAt").default(sql`CURRENT_TIMESTAMP`),
   },
-  (post) => ({
-    nameIndex: index("space_name_idx").on(post.name),
+  (space) => ({
+    nameIndex: index("space_name_idx").on(space.name),
   }),
 );
 

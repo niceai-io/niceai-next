@@ -14,7 +14,7 @@ export const apps = pgSqlTable(
       .notNull(),
     updatedAt: timestamp("updatedAt").default(sql`CURRENT_TIMESTAMP`),
   },
-  (plugin) => ({
-    nameIndex: index("app_name_idx").on(plugin.name),
+  (app) => ({
+    nameIndex: index("app_name_idx").on(app.name),
   }),
 );

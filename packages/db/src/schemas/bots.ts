@@ -14,7 +14,7 @@ export const bots = pgSqlTable(
       .notNull(),
     updatedAt: timestamp("updatedAt").default(sql`CURRENT_TIMESTAMP`),
   },
-  (plugin) => ({
-    nameIndex: index("bot_name_idx").on(plugin.name),
+  (bot) => ({
+    nameIndex: index("bot_name_idx").on(bot.name),
   }),
 );

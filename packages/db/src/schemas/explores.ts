@@ -14,7 +14,7 @@ export const explores = pgSqlTable(
       .notNull(),
     updatedAt: timestamp("updatedAt").default(sql`CURRENT_TIMESTAMP`),
   },
-  (plugin) => ({
-    nameIndex: index("explore_name_idx").on(plugin.name),
+  (explore) => ({
+    nameIndex: index("explore_name_idx").on(explore.name),
   }),
 );
