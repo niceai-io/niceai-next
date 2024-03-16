@@ -2,6 +2,12 @@
   "name": "@niceai/docs",
   "private": true,
   "type": "module",
+  "main": "index.ts",
+  "module": "index.ts",
+  "files": [
+    "**/*.md",
+    "**/*.mdx"
+  ],
   "scripts": {
     "format": "prettier --write . --cache --ignore-path ../../.gitignore"
   },
@@ -12,7 +18,11 @@
     ],
     "root": true
   },
+  "dependencies": {
+    "fast-glob": "^3.3.2"
+  },
   "devDependencies": {
+    "@types/node": "^18.19.24",
     "typescript": "^5.4.2"
   }
 }

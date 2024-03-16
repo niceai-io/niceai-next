@@ -1,3 +1,6 @@
+import { isProd, isVercel } from "@niceai/core";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Viewport } from "next";
@@ -42,6 +45,12 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           </div>
           <Toaster />
         </ThemeProvider>
+        {isProd && isVercel && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   );
